@@ -15,7 +15,7 @@ namespace CabInvoiceGenerator
             this.COST_PER_TIME = 1;
             this.MINIMUM_FARE = 5;     
         }
-        public double CalculateFare(double distance, double time)
+        public double CalculateTotalFare(double distance, double time)
 
         {
             if (distance >0 && time >0)
