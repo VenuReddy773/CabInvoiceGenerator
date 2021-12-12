@@ -14,5 +14,14 @@ namespace CabInvoiceTest
             double fare = invoice.CalculateTotalFare(distance, time);
             Assert.AreEqual(fare,60);
         }
+        [Test]
+        public void GivenDistanceAndTime_WhenAnalyzeFare_ShouldMultipleTotalFare()
+        {
+            InvoiceGenerator invoice = new InvoiceGenerator();
+            Ride[] rides = { new Ride(5, 2), new Ride(7, 1) };
+            double expected = invoice.CalculateMultipleFare(rides);
+            double result = invoice.CalculateMultipleFare(rides);
+            Assert.AreEqual(expected ,result );
+        }
     }
 }

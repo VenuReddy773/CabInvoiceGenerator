@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CabInvoiceGenerator
@@ -16,7 +17,6 @@ namespace CabInvoiceGenerator
             this.MINIMUM_FARE = 5;     
         }
         public double CalculateTotalFare(double distance, double time)
-
         {
             if (distance >0 && time >0)
             {
@@ -24,6 +24,15 @@ namespace CabInvoiceGenerator
                 return totalFare;
             }
             return MINIMUM_FARE;
+        }
+        public double CalculateMultipleFare(Ride[] ride)
+        {
+            double totalFare = 0;
+            foreach (var data in ride)
+            {
+                totalFare += CalculateTotalFare(data.DISTANCE,data.TIME);
+            }
+            return totalFare;
         }
     }
 }
