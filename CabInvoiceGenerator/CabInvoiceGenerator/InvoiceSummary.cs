@@ -9,7 +9,7 @@ namespace CabInvoiceGenerator
         public int totalNumberOfRides { get; set; }
         public double totalFare { get; set; }
         public double averageFarePerRide { get; set; }
-        public void CalulateAverageFare()
+        public void CalculateAverageFare()
         {
             averageFarePerRide = totalFare / totalNumberOfRides;
         }
